@@ -2,16 +2,17 @@ package com.tds.server;
 
 public class MapData {
 
-    //TODO: Replace this with terrain info loaded from game rules
-    private static final String TERRAIN_PLAINS = "P";
-
-    private String terrain;
+    private Terrain terrain;
 
     public MapData() {
-        this.terrain = TERRAIN_PLAINS;
+        this.terrain = new Terrain();
     }
 
-    public String getTerrain() {
+    public MapData( Terrain newTerrain ) {
+        this.terrain = newTerrain;
+    }
+
+    public Terrain getTerrain() {
         return this.terrain;
     }
 
