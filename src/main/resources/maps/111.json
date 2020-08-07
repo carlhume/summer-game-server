@@ -1,0 +1,20 @@
+{
+    "id":111,
+    "mapData": [
+        [
+            {"terrain":{"type":"P","label":"Plains"}},
+            {"terrain":{"type":"M","label":"Mountains"}},
+            {"terrain":{"type":"F","label":"Forest"}}
+        ],
+        [
+            {"terrain": {"type":"P","label":"Plains"}},
+            {"terrain":{"type":"M","label":"Mountains"}},
+            {"terrain":{"type":"F","label":"Forest"}}
+        ],
+        [
+            {"terrain":{"type":"M","label":"Mountains"}},
+            {"terrain":{"type":"M","label":"Mountains"}},
+            {"terrain":{"type":"P","label":"Plains"}}
+        ]
+    ]
+}

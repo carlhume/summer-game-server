@@ -8,8 +8,8 @@ public class RulesLoaderTest {
 
     @Test
     public void testLoadingTerrainTypes() throws Exception {
-        RulesLoader serializer = new RulesLoader();
-        TerrainRules rules = serializer.loadTerrainRules();
+        RulesLoader rulesLoader = new RulesLoader();
+        TerrainRules rules = rulesLoader.loadTerrainRules();
         assertEquals( 3, rules.countUniqueTerrainTypes() );
     }
 
