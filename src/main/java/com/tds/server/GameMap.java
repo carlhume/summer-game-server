@@ -10,10 +10,10 @@ public class GameMap {
     public GameMap() {
         this( HARDCODED_PLAINS_MAP_ID );
         mapData = new MapData[2][2];
-        mapData[0][0] = new MapData( Terrain.PLAINS );
-        mapData[0][1] = new MapData( Terrain.PLAINS );
-        mapData[1][0] = new MapData( Terrain.FOREST );
-        mapData[1][1] = new MapData( Terrain.FOREST );
+        mapData[0][0] = new MapData( TerrainRules.DEFAULT_RULES.getRandomTerrain() );
+        mapData[0][1] = new MapData( TerrainRules.DEFAULT_RULES.getRandomTerrain() );
+        mapData[1][0] = new MapData( TerrainRules.DEFAULT_RULES.getRandomTerrain() );
+        mapData[1][1] = new MapData( TerrainRules.DEFAULT_RULES.getRandomTerrain() );
     }
 
     public GameMap( long mapId ) {
