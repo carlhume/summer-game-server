@@ -5,6 +5,8 @@ import org.slf4j.LoggerFactory;import org.springframework.web.bind.annotation.Ge
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
+
 @RestController
 public class MapController {
 
@@ -14,7 +16,16 @@ public class MapController {
     @GetMapping( "/map" )
     public GameMap loadMap() {
         LOGGER.info( "MapController.loadMap() called" );
-        return new GameMap();
+
+        RulesLoader rulesLoader = new RulesLoader();
+        TerrainRules terrainRules = TerrainRules.DEFAULT_RULES;
+        try {
+            terrainRules = rulesLoader.loadTerrainRules();
+        } catch (IOException e) {
+            LOGGER.error( "MapController could not load terrain rules", e );
+        }
+
+        return new GameMap( terrainRules );
     }
 
 }

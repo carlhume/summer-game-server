@@ -7,13 +7,14 @@ public class GameMap {
     private long id;
     private MapData[][] mapData;
 
-    public GameMap() {
+    public GameMap( TerrainRules terrainRules ) {
         this( HARDCODED_PLAINS_MAP_ID );
+
         mapData = new MapData[2][2];
-        mapData[0][0] = new MapData( TerrainRules.DEFAULT_RULES.pickRandomTerrain() );
-        mapData[0][1] = new MapData( TerrainRules.DEFAULT_RULES.pickRandomTerrain() );
-        mapData[1][0] = new MapData( TerrainRules.DEFAULT_RULES.pickRandomTerrain() );
-        mapData[1][1] = new MapData( TerrainRules.DEFAULT_RULES.pickRandomTerrain() );
+        mapData[0][0] = new MapData( terrainRules.pickRandomTerrain() );
+        mapData[0][1] = new MapData( terrainRules.pickRandomTerrain() );
+        mapData[1][0] = new MapData( terrainRules.pickRandomTerrain() );
+        mapData[1][1] = new MapData( terrainRules.pickRandomTerrain() );
     }
 
     public GameMap( long mapId ) {
