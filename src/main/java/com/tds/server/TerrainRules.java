@@ -29,7 +29,7 @@ public class TerrainRules {
         return this.terrain;
     }
 
-    public Terrain getRandomTerrain() {
+    public Terrain pickRandomTerrain() {
         Random random = new Random();
         return this.terrain.get( random.nextInt( countUniqueTerrainTypes() ) );
     }
