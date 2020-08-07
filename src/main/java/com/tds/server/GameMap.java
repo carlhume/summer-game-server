@@ -7,8 +7,8 @@ public class GameMap {
     private long id;
     private MapData[][] mapData;
 
-    public GameMap( TerrainRules terrainRules ) {
-        this( HARDCODED_PLAINS_MAP_ID );
+    public GameMap( long mapID, TerrainRules terrainRules ) {
+        this( mapID );
 
         mapData = new MapData[2][2];
         mapData[0][0] = new MapData( terrainRules.pickRandomTerrain() );

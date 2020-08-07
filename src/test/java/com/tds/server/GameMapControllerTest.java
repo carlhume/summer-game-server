@@ -9,7 +9,7 @@ public class GameMapControllerTest {
     @Test
     public void testHealthCheckCanReport() {
         MapController mapController = new MapController();
-        assertNotNull( mapController.loadMap() );
+        assertNotNull( mapController.createRandomMap() );
     }
 
 }

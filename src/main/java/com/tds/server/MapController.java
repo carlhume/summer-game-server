@@ -6,16 +6,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
+import java.util.Random;
 
 @RestController
 public class MapController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger( MapController.class );
 
-    //TODO:  Consider factory pattern for loading maps
-    @GetMapping( "/map" )
-    public GameMap loadMap() {
-        LOGGER.info( "MapController.loadMap() called" );
+    @GetMapping( "/random-map" )
+    public GameMap createRandomMap() {
+        LOGGER.info( "MapController.createRandomMap() called" );
 
         RulesLoader rulesLoader = new RulesLoader();
         TerrainRules terrainRules = TerrainRules.DEFAULT_RULES;
@@ -25,7 +25,7 @@ public class MapController {
             LOGGER.error( "MapController could not load terrain rules", e );
         }
 
-        return new GameMap( terrainRules );
+        return new GameMap( new Random().nextLong(), terrainRules );
     }
 
 }
