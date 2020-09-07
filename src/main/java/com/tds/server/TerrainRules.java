@@ -11,7 +11,6 @@ public class TerrainRules {
     private static TerrainRules initializeDefaultRules() {
         TerrainRules rules = new TerrainRules();
         rules.addTerrain( Terrain.PLAINS );
-        rules.addTerrain( Terrain.FOREST );
         return rules;
     }
 

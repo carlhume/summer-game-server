@@ -7,10 +7,6 @@ public class Terrain {
     private static final String LABEL_PLAINS = "Plains";
     public static final Terrain PLAINS = new Terrain( CODE_PLAINS, LABEL_PLAINS );
 
-    private static final String CODE_FOREST = "F";
-    private static final String LABEL_FOREST = "Forest";
-    public static final Terrain FOREST = new Terrain( CODE_FOREST, LABEL_FOREST );
-
     private String type;
     private String label;
 

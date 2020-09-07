@@ -23,9 +23,10 @@ public class TerrainRulesTest {
     }
 
     @Test
-    public void testDefaultRulesHaveTwoTerrainTypes() {
-        TerrainRules rules = TerrainRules.DEFAULT_RULES;
-        assertEquals( 2, rules.countUniqueTerrainTypes() );
+    public void testTerrainRulesCanDefineMoreThanOneTerrain() {
+        terrainRules.addTerrain( new Terrain( "TP", "Test Plains" ) );
+        terrainRules.addTerrain( new Terrain( "TF", "Test Forest" ) );
+        assertEquals( 2, terrainRules.countUniqueTerrainTypes() );
     }
 
     @Test
