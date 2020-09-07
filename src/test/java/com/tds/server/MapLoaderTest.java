@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class MapLoaderTest {
 
@@ -14,6 +13,15 @@ public class MapLoaderTest {
         MapLoader mapLoader = new MapLoader();
         GameMap map = mapLoader.load( 111 );
         assertEquals( 111, map.getId() );
+    }
+
+    @Test
+    public void testLoadingWithRulesPopulatesMapRules() throws IOException {
+        MapLoader mapLoader = new MapLoader();
+        TerrainRules terrainRules = new TerrainRules();
+        terrainRules.addTerrainDefinition( new Terrain( "P", "Plains" ) );
+        GameMap map = mapLoader.loadMapForIdUsingRules( 111, terrainRules );
+        assertEquals( "Plains", map.getMapData()[0][0].getTerrain().getLabel() );
     }
 
     @Test

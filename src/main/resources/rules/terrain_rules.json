@@ -3,6 +3,8 @@
 		[
 			{"type":"P","label":"Plains"},
 			{"type":"M","label":"Mountains"},
-			{"type":"F","label":"Forest"}
+			{"type":"F","label":"Forest"},
+			{"type":"W","label":"Water"},
+			{"type":"D","label":"Desert"}
 		]
 }

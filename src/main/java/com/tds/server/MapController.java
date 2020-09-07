@@ -17,8 +17,9 @@ public class MapController {
     @GetMapping( "/load-map" )
     public GameMap loadMap( @RequestParam( value = "id", defaultValue = "112" ) long id ) throws IOException {
         LOGGER.info( "MapController.loadMap() called with id: " + id );
+        TerrainRules terrainRules = loadTerrainRules();
         MapLoader mapLoader = new MapLoader();
-        return mapLoader.load( id );
+        return mapLoader.loadMapForIdUsingRules( id, terrainRules );
     }
 
     @GetMapping( "/random-map" )
@@ -29,6 +30,7 @@ public class MapController {
     }
 
     private TerrainRules loadTerrainRules() {
+        LOGGER.info( "MapController.loadTerrainRules() called" );
         RulesLoader rulesLoader = new RulesLoader();
         TerrainRules terrainRules = new TerrainRules();
         try {

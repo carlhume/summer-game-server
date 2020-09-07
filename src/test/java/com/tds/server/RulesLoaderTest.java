@@ -10,7 +10,7 @@ public class RulesLoaderTest {
     public void testLoadingTerrainTypes() throws Exception {
         RulesLoader rulesLoader = new RulesLoader();
         TerrainRules rules = rulesLoader.loadTerrainRules();
-        assertEquals( 3, rules.countUniqueTerrainTypes() );
+        assertEquals( 5, rules.countUniqueTerrainTypes() );
     }
 
 }

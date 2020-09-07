@@ -16,6 +16,18 @@ public class MapLoader {
         return mapper.readValue( resource.getFile(), GameMap.class );
     }
 
+    public GameMap loadMapForIdUsingRules(long id, TerrainRules rules ) throws IOException {
+        GameMap map = load( id );
+        for( MapData[] row : map.getMapData() ) {
+            for( MapData data : row ) {
+                Terrain mapTerrain = data.getTerrain();
+                Terrain terrainDefinition = rules.findTerrainDefinitionForType( mapTerrain.getType() );
+                mapTerrain.setLabel( terrainDefinition.getLabel() );
+            }
+        }
+        return map;
+    }
+
     public String createFilenameForId( long id ) {
         return "classpath:maps/" + id + ".json";
     }
