@@ -2,17 +2,12 @@ package com.tds.server;
 
 public class Terrain {
 
-    //TODO: Replace this with terrain info loaded from game rules
-    private static final String CODE_PLAINS = "P";
-    private static final String LABEL_PLAINS = "Plains";
-    public static final Terrain PLAINS = new Terrain( CODE_PLAINS, LABEL_PLAINS );
-
     private String type;
     private String label;
 
     public Terrain() {
-        this.type = CODE_PLAINS;
-        this.label = LABEL_PLAINS;
+        this.type = "";
+        this.label = "";
     }
 
     public Terrain( String type, String label ) {

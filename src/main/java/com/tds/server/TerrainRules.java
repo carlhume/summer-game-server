@@ -6,14 +6,6 @@ import java.util.Random;
 
 public class TerrainRules {
 
-    public static final TerrainRules DEFAULT_RULES = initializeDefaultRules();
-
-    private static TerrainRules initializeDefaultRules() {
-        TerrainRules rules = new TerrainRules();
-        rules.addTerrain( Terrain.PLAINS );
-        return rules;
-    }
-
     private List<Terrain> terrain;
 
     public TerrainRules() {

@@ -26,7 +26,7 @@ public class MapController {
         LOGGER.info( "MapController.createRandomMap() called" );
 
         RulesLoader rulesLoader = new RulesLoader();
-        TerrainRules terrainRules = TerrainRules.DEFAULT_RULES;
+        TerrainRules terrainRules = new TerrainRules();
         try {
             terrainRules = rulesLoader.loadTerrainRules();
         } catch (IOException e) {
