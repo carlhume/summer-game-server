@@ -6,13 +6,14 @@ import java.util.Random;
 
 public class TerrainRules {
 
+    private static final Terrain UNDEFINED_TERRAIN = new Terrain( "NF", "Terrain Not Found" );
     private List<Terrain> terrain;
 
     public TerrainRules() {
         this.terrain = new ArrayList<>();
     }
 
-    public void addTerrain( Terrain terrain ) {
+    public void addTerrainDefinition( Terrain terrain ) {
         if( alreadyDefinesTerrain( terrain ) == false ) {
             this.terrain.add(terrain);
         }
@@ -21,14 +22,14 @@ public class TerrainRules {
     public boolean alreadyDefinesTerrain( Terrain terrain ) {
         boolean alreadyDefined = true;
         Terrain definition = findTerrainDefinitionForType( terrain.getType() );
-        if( definition.getType().equals( "NF" ) ) {
+        if( definition.equals( UNDEFINED_TERRAIN ) ) {
             alreadyDefined = false;
         }
         return alreadyDefined;
     }
 
     public Terrain findTerrainDefinitionForType( String type ) {
-        Terrain foundTerrain = new Terrain( "NF", "Terrain Not Found" );
+        Terrain foundTerrain = UNDEFINED_TERRAIN;
         for( Terrain terrainDefinition : terrain ) {
             if( terrainDefinition.getType().equals( type ) ) {
                 foundTerrain = terrainDefinition;

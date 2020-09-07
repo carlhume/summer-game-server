@@ -24,8 +24,8 @@ public class TerrainRulesTest {
 
     @Test
     public void testTerrainRulesCanDefineMoreThanOneTerrain() {
-        terrainRules.addTerrain( new Terrain( "TP", "Test Plains" ) );
-        terrainRules.addTerrain( new Terrain( "TF", "Test Forest" ) );
+        terrainRules.addTerrainDefinition( new Terrain( "TP", "Test Plains" ) );
+        terrainRules.addTerrainDefinition( new Terrain( "TF", "Test Forest" ) );
         assertEquals( 2, terrainRules.countUniqueTerrainTypes() );
     }
 
@@ -33,14 +33,14 @@ public class TerrainRulesTest {
     public void testThereIsOnlyOneDefinitionForEachTerrainType() {
         Terrain testTerrain = new Terrain( "test", "Test Terrain" );
         Terrain alsoTestTerrain = new Terrain( "test", "Also Test Terrain" );
-        terrainRules.addTerrain( testTerrain );
-        terrainRules.addTerrain( alsoTestTerrain );
+        terrainRules.addTerrainDefinition( testTerrain );
+        terrainRules.addTerrainDefinition( alsoTestTerrain );
         assertEquals( 1, terrainRules.countUniqueTerrainTypes() );
     }
 
     @Test
     public void testCanFindTerrainDefinitionByType() {
-        terrainRules.addTerrain( testTerrain );
+        terrainRules.addTerrainDefinition( testTerrain );
         assertEquals( testTerrain, terrainRules.findTerrainDefinitionForType( testTerrain.getType() ) );
     }
 
@@ -51,7 +51,7 @@ public class TerrainRulesTest {
 
     @Test
     public void testTerrainAlreadyDefined() {
-        terrainRules.addTerrain( testTerrain );
+        terrainRules.addTerrainDefinition( testTerrain );
         assertTrue( terrainRules.alreadyDefinesTerrain( testTerrain ) );
     }
 
