@@ -22,7 +22,7 @@ public class MapLoader {
             for( MapData data : row ) {
                 Terrain mapTerrain = data.getTerrain();
                 Terrain terrainDefinition = rules.findTerrainDefinitionForType( mapTerrain.getType() );
-                mapTerrain.setLabel( terrainDefinition.getLabel() );
+                mapTerrain.initializeFromTerrainDefinition( terrainDefinition );
             }
         }
         return map;

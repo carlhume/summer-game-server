@@ -31,4 +31,7 @@ public class Terrain {
         this.label = newLabel;
     }
 
+    public void initializeFromTerrainDefinition( Terrain terrainDefinition ) {
+        setLabel( terrainDefinition.getLabel() );
+    }
 }
