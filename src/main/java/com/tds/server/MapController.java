@@ -24,7 +24,11 @@ public class MapController {
     @GetMapping( "/random-map" )
     public GameMap createRandomMap() {
         LOGGER.info( "MapController.createRandomMap() called" );
+        TerrainRules terrainRules = loadTerrainRules();
+        return new GameMap( new Random().nextLong(), terrainRules );
+    }
 
+    private TerrainRules loadTerrainRules() {
         RulesLoader rulesLoader = new RulesLoader();
         TerrainRules terrainRules = new TerrainRules();
         try {
@@ -32,8 +36,7 @@ public class MapController {
         } catch (IOException e) {
             LOGGER.error( "MapController could not load terrain rules", e );
         }
-
-        return new GameMap( new Random().nextLong(), terrainRules );
+        return terrainRules;
     }
 
 }
