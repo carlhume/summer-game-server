@@ -30,4 +30,6 @@ public class MapLoaderTest {
         assertEquals( "classpath:maps/111.json", mapLoader.createFilenameForId( 111 ) );
     }
 
+    // TODO:  >> cnh >> Consider adding test for when MapLoader throws Exception to make Behavior explicit
+    // >> cnh >> Does it make sense to add a Map not found Exception?
 }

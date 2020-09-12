@@ -44,10 +44,10 @@ public class TerrainRules {
 
     public Terrain pickRandomTerrain() {
         Random random = new Random();
-        return this.terrain.get( random.nextInt( countUniqueTerrainTypes() ) );
+        return this.terrain.get( random.nextInt( countTerrainTypes() ) );
     }
 
-    public int countUniqueTerrainTypes() {
+    public int countTerrainTypes() {
         return this.terrain.size();
     }
 

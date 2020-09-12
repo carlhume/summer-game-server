@@ -19,14 +19,14 @@ public class TerrainRulesTest {
     @Test
     public void testEmptyRulesHaveNoTerrain() {
         TerrainRules rules = new TerrainRules();
-        assertEquals( 0, rules.countUniqueTerrainTypes() );
+        assertEquals( 0, rules.countTerrainTypes() );
     }
 
     @Test
     public void testTerrainRulesCanDefineMoreThanOneTerrain() {
         terrainRules.addTerrainDefinition( new Terrain( "TP", "Test Plains" ) );
         terrainRules.addTerrainDefinition( new Terrain( "TF", "Test Forest" ) );
-        assertEquals( 2, terrainRules.countUniqueTerrainTypes() );
+        assertEquals( 2, terrainRules.countTerrainTypes() );
     }
 
     @Test
@@ -35,7 +35,7 @@ public class TerrainRulesTest {
         Terrain alsoTestTerrain = new Terrain( "test", "Also Test Terrain" );
         terrainRules.addTerrainDefinition( testTerrain );
         terrainRules.addTerrainDefinition( alsoTestTerrain );
-        assertEquals( 1, terrainRules.countUniqueTerrainTypes() );
+        assertEquals( 1, terrainRules.countTerrainTypes() );
     }
 
     @Test
