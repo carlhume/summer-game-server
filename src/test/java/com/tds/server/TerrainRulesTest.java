@@ -56,6 +56,11 @@ public class TerrainRulesTest {
     }
 
     @Test
+    public void testTerrainRulesListOfTerrainIsExposedViaGetterForAutomaticallySendingToClient() {
+        assertNotNull( terrainRules.getTerrain() );
+    }
+
+    @Test
     public void testTerrainNotDefined() {
         assertFalse( terrainRules.alreadyDefinesTerrain( testTerrain ) );
     }
