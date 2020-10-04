@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class GameControllerTest {
 
     @Test
-    public void testCanLoadGameFromId() {
+    public void testCanLoadGameFromId() throws IOException {
         GameController gameController = new GameController();
         assertEquals( 1000, gameController.loadGame( 1000 ).getId() );
     }

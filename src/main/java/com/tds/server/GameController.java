@@ -15,7 +15,7 @@ public class GameController {
     private static final Logger LOGGER = LoggerFactory.getLogger( GameController.class );
 
     @GetMapping( "/load-game" )
-    public Game loadGame( @RequestParam( value = "id", defaultValue = "1000" ) long id ) {
+    public Game loadGame( @RequestParam( value = "id", defaultValue = "1000" ) long id ) throws IOException {
         LOGGER.info( "GameController.loadGame() called with id: " + id );
         GameLoader gameLoader = new GameLoader();
         return gameLoader.loadGame( id );
