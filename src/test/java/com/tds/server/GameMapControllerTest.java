@@ -11,13 +11,13 @@ public class GameMapControllerTest {
 
     @Test
     public void testCanCreateRandomMapWithoutException() {
-        MapController mapController = new MapController();
-        assertNotNull( mapController.createRandomMap() );
+        GameMapController gameMapController = new GameMapController();
+        assertNotNull( gameMapController.createRandomMap() );
     }
 
     @Test
     public void testCanLoadMapFromId() throws IOException {
-        MapController mapController = new MapController();
-        assertEquals( 113, mapController.loadMap( 113 ).getId() );
+        GameMapController gameMapController = new GameMapController();
+        assertEquals( 113, gameMapController.loadMap( 113 ).getId() );
     }
 }

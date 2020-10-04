@@ -23,8 +23,6 @@ public class SummerGameServer implements ApplicationRunner {
 
     @Override
     public void run( ApplicationArguments args ) {
-
         LOGGER.info( "SummerGameServer run() called" );
-
     }
 }

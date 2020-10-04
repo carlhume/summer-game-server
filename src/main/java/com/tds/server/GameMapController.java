@@ -2,7 +2,6 @@ package com.tds.server;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,9 +9,9 @@ import java.io.IOException;
 import java.util.Random;
 
 @RestController
-public class MapController {
+public class GameMapController {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger( MapController.class );
+    private static final Logger LOGGER = LoggerFactory.getLogger( GameMapController.class );
 
     @GetMapping( "/load-map" )
     public GameMap loadMap( @RequestParam( value = "id", defaultValue = "112" ) long id ) throws IOException {
