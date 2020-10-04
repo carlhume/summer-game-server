@@ -12,12 +12,8 @@ public class GameLoader {
     // We are currently loading the game from a file on disk.
     // At some point we are likely going to want created games to be stored in a database,
     // or at least on a directory separate from the configuration resources used to create games.
-    // ie. Create separation between static resources and dynamicly created ones
+    // ie. Create separation between static resources and dynamically created ones
     public Game loadGame( long id ) throws IOException {
-//        Game game = new Game();
-//        game.setId( id );
-//        return game;
-
         ObjectMapper mapper = new ObjectMapper();
         ResourceLoader resourceLoader = new DefaultResourceLoader();
         Resource resource = resourceLoader.getResource( createFilenameForId( id ) );
