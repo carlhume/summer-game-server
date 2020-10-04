@@ -17,9 +17,8 @@ public class GameController {
     @GetMapping( "/load-game" )
     public Game loadGame( @RequestParam( value = "id", defaultValue = "1000" ) long id ) {
         LOGGER.info( "GameController.loadGame() called with id: " + id );
-        Game game = new Game();
-        game.setId( id );
-        return game;
+        GameLoader gameLoader = new GameLoader();
+        return gameLoader.loadGame( id );
     }
 
 }

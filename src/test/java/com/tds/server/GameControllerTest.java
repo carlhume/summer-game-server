@@ -15,4 +15,10 @@ public class GameControllerTest {
         assertEquals( 1000, gameController.loadGame( 1000 ).getId() );
     }
 
+//    @Test
+//    public void testLoadedGameHasMapId() {
+//        GameController gameController = new GameController();
+//        assertEquals( 112, gameController.loadGame( 1000 ).getMap().getId() );
+//    }
+
 }
